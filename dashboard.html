@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src='dashboard.js'></script>
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js'></script>
+    <title>Millenium Medical Association Administrator</title>
+  </head>
+  <body>
+    <div id="root">
+			<img src='logo.png' />	
+      <h1>Welcome to the Administrator Interface</h1>
+      <div id='menu'>
+        <div class='ui massive primary button' onclick='loadPageContent("settings")'>
+          Settings
+        </div>
+        <div class='ui massive primary button' onclick='loadPageContent("templates")'>
+          E-mail templates
+        </div>
+      </div>
+      <div id='pageContent' class='col-sm-12'>
+        <div id='settings'>
+					<h2>Settings</h2>
+          <div class='setting'>
+            <div>Business hours (enter in format: 9-5) (timezone: UTC):</div>
+            <input id='businessHours' />
+          </div>
+          <div class='setting'>
+            <div>Minimum eligibility score:</div>
+            <input id='minimumEligibility' />
+          </div>
+          <div class='setting'>
+            <div>Medication disqualifiers (comma-separated, all lowercase values):</div>
+            <input id='disqualifiers' />
+          </div>
+          <div class='setting'>
+            <div>Time delay in minutes for sending e-mail after completion of patient questionnaire:</div>
+            <input id='delay' />
+          </div>
+					<div class='large ui primary button' id='submitSettings'>
+						Save
+					</div>	
+        </div>
+        <div id='templates'>
+					<h2>E-mail Templates</h2>
+					<p>You may use HTML</p>
+					<p>To use first and last name within the template body use {firstName} and {lastName}. They will be replaced with real values</p>
+          <div class='template'>
+						<div class='templateTitle'>Eligible Phase 1</div>
+						Subject:<br />
+            <input id='eligible_phase_1_subject' />
+						<br />Body:<br />
+            <textarea id='eligible_phase_1_body'>
+            </textarea>
+          </div>
+          <div class='template'>
+						<div class='templateTitle'>Eligible Phase 2</div>
+						Subject:<br />
+            <input id='eligible_phase_2_subject' />
+						<br />Body:<br />
+            <textarea id='eligible_phase_2_body'>
+            </textarea>
+          </div>
+          <div class='template'>
+						<div class='templateTitle'>Ineligible due to age</div>
+						Subject:<br />
+            <input id='ineligible_due_to_age_subject' />
+						<br />Body:<br />
+            <textarea id='ineligible_due_to_age_body'>
+            </textarea>
+          </div>
+          <div class='template'>
+						<div class='templateTitle'>Ineligible due to score</div>
+						Subject:<br />
+            <input id='ineligible_due_to_score_subject' />
+						<br />Body:<br />
+            <textarea id='ineligible_due_to_score_body'>
+            </textarea>
+          </div>
+          <div class='template'>
+						<div class='templateTitle'>Ineligible due to medical condition</div>
+						Subject:<br />
+            <input id='ineligible_due_to_medical_subject' />
+						<br />Body:<br />
+            <textarea id='ineligible_due_to_medical_body'>
+            </textarea>
+          </div>
+          <div class='template'>
+						<div class='templateTitle'>Ineligible due to current medication</div>
+						Subject:<br />
+            <input id='ineligible_due_to_medication_subject' />
+						<br />Body:<br />
+            <textarea id='ineligible_due_to_medication_body'>
+            </textarea>
+          </div>
+					<div class='large ui primary button' id='submitTemplates'>
+						Save
+					</div>	
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+node_modules/
+read-write-spreadsheet/credentials.json
+read-write-spreadsheet/token.json
+send-gmail/credentials.json
+send-gmail/token.json
+watch-spreadsheet/credentials.json
+watch-spreadsheet/token.json
+token.json
+scheduler/outbound
